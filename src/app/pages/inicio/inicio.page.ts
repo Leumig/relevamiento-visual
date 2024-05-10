@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
- 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
@@ -10,8 +9,8 @@ import { Router } from '@angular/router';
 export class InicioPage implements OnInit {
 
   constructor(private router: Router) {}
-  tema:string = 'numeros';
-  idioma:string = 'español';
+  tema: string = 'animales';
+  idioma: string = 'español';
 
   cerrarSesion() {
     this.router.navigate(['/login']);

@@ -4,7 +4,7 @@
 
 <ion-content [fullscreen]="true">
 
-  <div class="botones-container">
+  <div id="botones-container">
     @if (this.tema === 'animales') {
       <ion-button class="boton" (click)="generarSonido('leon')"><img src="../../../assets/images/animales/leon.png"></ion-button>
       <ion-button class="boton" (click)="generarSonido('pez')"><img src="../../../assets/images/animales/pez.png"></ion-button>
@@ -17,12 +17,6 @@
       <ion-button class="boton" id="numeroTres" (click)="generarSonido('3')">3</ion-button>
       <ion-button class="boton" id="numeroCuatro" (click)="generarSonido('4')">4</ion-button>
       <ion-button class="boton" id="numeroCinco" (click)="generarSonido('5')">5</ion-button>
-
-      <!-- <ion-button id="numeroUno" style="font-size: 145px;" (click)="generarSonido('1')">1</ion-button>
-      <ion-button id="numeroDos" style="font-size: 145px;" (click)="generarSonido('2')">2</ion-button>
-      <ion-button id="numeroTres" style="font-size: 145px;" (click)="generarSonido('3')">3</ion-button>
-      <ion-button id="numeroCuatro" style="font-size: 145px;" (click)="generarSonido('4')">4</ion-button>
-      <ion-button id="numeroCinco" style="font-size: 145px;" (click)="generarSonido('5')">5</ion-button> -->
     } @else {
       <ion-button style="--background: #ff0000;" class="boton" (click)="generarSonido('rojo')"></ion-button>
       <ion-button style="--background: #12a012;" class="boton" (click)="generarSonido('verde')"></ion-button>
