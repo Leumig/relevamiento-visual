@@ -1,0 +1,92 @@
+@font-face {
+  font-family: 'RifficFree-Bold';
+  src: url('../../../assets/fonts/RifficFree-Bold.ttf') format('truetype');
+}
+
+ion-content {
+  --background: #024b40;
+}
+
+.botones-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 1px;
+  align-items: stretch; /* Estira los elementos para que cubran toda la altura */
+  height: 98vh; /* Altura del 90% de la ventana */
+}
+
+.boton {
+  flex-basis: calc(100% - 1px); /* Ancho del botón (40% del contenedor - 10px de espacio entre botones) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 18vh;
+  // font-size: 145px;
+  color: #fff;
+  font-family: 'RifficFree-Bold';
+}
+
+ion-button {
+  --background: #006859;
+}
+
+.boton img {
+  max-width: 100%; /* Asegura que la imagen se ajuste al tamaño del botón */
+  max-height: 100%;
+}
+
+.custom-fab-button {
+  width: 60px; /* Ajusta el ancho según tus preferencias */
+  height: 60px; /* Ajusta la altura según tus preferencias */
+  
+  img {
+    width: 70%; /* Ajusta el ancho según tus preferencias */
+    height: 70%; /* Ajusta la altura según tus preferencias */
+  }
+}
+
+
+#numeroUno {
+  color:#fee500;
+  font-size: 145px;
+}
+#numeroDos {
+  color:#ff0000;
+  font-size: 145px;
+}
+#numeroTres {
+  color:#13c4b2;
+  font-size: 145px;
+}
+#numeroCuatro {
+  color:#ff0bf3;
+  font-size: 145px;
+}
+#numeroCinco {
+  color:#00ff44;
+  font-size: 145px;
+}
+
+@media screen and (orientation: landscape) {
+  #numeroUno {
+    color:#fee500;
+    font-size: 78px;
+  }
+  #numeroDos {
+    color:#ff0000;
+    font-size: 78px;
+  }
+  #numeroTres {
+    color:#13c4b2;
+    font-size: 78px;
+  }
+  #numeroCuatro {
+    color:#ff0bf3;
+    font-size: 78px;
+  }
+  #numeroCinco {
+    color:#00ff44;
+    font-size: 78px;
+  }
+}

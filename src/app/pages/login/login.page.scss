@@ -1,0 +1,93 @@
+@font-face {
+  font-family: 'script-1';
+  src: url('../../../assets/fonts/script-1.ttf') format('truetype');
+}
+
+ion-content {
+  --background: #006859;
+}
+
+ion-toolbar {
+  --background: #024b40; // Color de fondo de la barra de herramientas
+  color: #fff; // Color del texto en la barra de herramientas
+}
+
+ion-title {
+  margin-left: 60px;
+  font-size: 30px; // Tamaño del título
+  font-family: 'script-1';
+  text-align: center;
+}
+
+ion-item {
+  --padding-start: 20px; // Añadir espacio al principio del elemento
+  --padding-end: 20px; // Añadir espacio al final del elemento
+}
+
+ion-input {
+  font-family: 'script-1';
+  font-size: 30px; // Tamaño de fuente del input
+}
+
+#contenedor-boton {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+button {
+  font-family: 'script-1';
+  background: #2DD55B; // Color de fondo del botón
+  color: #000000; // Color del texto del botón
+  font-size: 30px; // Tamaño de fuente del botón
+  margin-top: 20px; // Espacio superior del botón
+  margin-left: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); // Sombra del borde (horizontal, vertical, blur, color)
+}
+
+
+ion-list {
+  background: #006859;
+}
+
+ion-label {
+  font-family: 'script-1';
+  font-size: 80px;
+}
+
+#cuadro-login {
+  background-color: #006859;
+}
+
+#footer {
+  margin-top: 20px;
+  background-color: #024b40;
+  color: #fff;
+  margin-left: 10px;
+  padding: 5px;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-family: 'script-1';
+  font-size: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); // Sombra del borde (horizontal, vertical, blur, color)
+
+  h6 {
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  #footer {
+    display: none;
+  }
+}

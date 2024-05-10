@@ -1,0 +1,52 @@
+@font-face {
+  font-family: 'script-1';
+  src: url('../../../assets/fonts/script-1.ttf') format('truetype');
+}
+
+ion-content {
+  --background: url('../../../assets/splash2-convertido.jpg');
+  background-size: contain; // Ajusta el tamaño para contener completamente la imagen
+}
+
+// Animación parrafos
+@-webkit-keyframes slide-in-bck-center{0%{-webkit-transform:translateZ(600px);transform:translateZ(600px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}@keyframes slide-in-bck-center{0%{-webkit-transform:translateZ(600px);transform:translateZ(600px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}
+
+// Animación icono
+@-webkit-keyframes rotate-center{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotate-center{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}
+
+.container {
+  img {
+    -webkit-animation:rotate-center .6s ease-in-out both;animation:rotate-center .6s ease-in-out both;
+    height: 180px;
+    margin-top: 75%;
+  }
+}
+
+.header {
+  display: flex;
+  position: absolute;
+  left: 5%;
+  height: 7%;
+  width: 100%;
+  margin-top: 5%;
+  font-size: 40px;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.footer {
+  display: flex;
+  position: absolute;
+  margin-left: 88%;
+  height: 7%;
+  width: 100%;
+  margin-top: 54%;
+  top: 5%;
+  margin-bottom: 100%;
+  font-size: 40px;
+  border-radius: 0px 0px 20px 20px;
+}
+
+p.external-paragraph {
+  -webkit-animation:slide-in-bck-center .7s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-bck-center .7s cubic-bezier(.25,.46,.45,.94) both;
+  font-family: 'script-1', sans-serif;
+}

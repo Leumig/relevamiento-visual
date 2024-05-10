@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "37093937710",
+    "project_id": "pps-primer-parcial-2024",
+    "storage_bucket": "pps-primer-parcial-2024.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:37093937710:android:17f9be17b286c6583ec5bf",
+        "android_client_info": {
+          "package_name": "com.relevamiento.parcial"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBPgr-wID5aqI7efvp4v2Hn1OjE3V3gco"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:37093937710:android:1ef77a0f55b73bd53ec5bf",
+        "android_client_info": {
+          "package_name": "com.tabla.parcial"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBPgr-wID5aqI7efvp4v2Hn1OjE3V3gco"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
