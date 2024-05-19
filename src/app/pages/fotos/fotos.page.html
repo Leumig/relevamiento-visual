@@ -1,0 +1,49 @@
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <div class="ion-page" id="main-content">
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+          <ion-title style="font-family: 'Antreas'; font-size: 32px;">FOTOS</ion-title>
+        </ion-toolbar>
+      </ion-header>
+    </div>
+  </ion-item>
+
+  <div class="sticky-segment">
+    <ion-segment (ionChange)="onFiltroChange($event)" value="">
+      <ion-segment-button value="">
+        <ion-label>Todas</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="lindas">
+        <ion-label>Lindas</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="feas">
+        <ion-label>Feas</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <ion-list>
+    <ion-item *ngFor="let foto of fotos">
+      <ion-card [ngClass]="{'carta-linda': foto.tipo === 'lindas', 'carta-fea': foto.tipo === 'feas'}">
+        <ion-card-title>{{ foto.tipo === 'lindas' ? 'LINDA' : 'FEA' }}</ion-card-title>
+        <img [src]="foto.url" />
+        <ion-card-content>
+          <div class="datos">
+            <p>{{ foto.usuario }}</p>
+            <p>{{ foto.fecha.toDate() | date: 'short' }}</p>
+            <p>Votos: {{ foto.votos }}</p>
+          </div>
+          <button (click)="votar(foto)" class="votar-boton">
+            <ion-icon [name]="haVotado(foto) ? 'heart' : 'heart-outline'"></ion-icon>
+          </button>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>

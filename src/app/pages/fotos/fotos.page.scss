@@ -1,0 +1,109 @@
+@font-face {
+  font-family: 'Antreas';
+  src: url('../../../assets/fonts/Antreas.ttf') format('truetype');
+}
+
+ion-title {
+  color: #ff0000;
+  --font-family: 'Antreas';
+}
+
+ion-menu-button {
+  color: #ff0000;
+}
+
+ion-segment {
+  --color: red; /* Cambia el color del indicador */
+}
+
+ion-segment-button {
+  font-family: 'youngfrank';
+  font-size: 22px;
+  color: #fff; /* Color del texto cuando no está seleccionado */
+  background-color: #000000;
+  --color-checked: #fff; /* Color del texto cuando está seleccionado */
+  --background-checked: #000000; /* Fondo del botón cuando está seleccionado */
+}
+ion-segment-button.segment-button-checked {
+  --indicator-color: #ffffff; /* Color del indicador cuando está seleccionado */
+  --color: #fff; /* Asegúrate de que el color del texto también se aplica aquí */
+}
+.sticky-segment {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10; /* Asegúrate de que el z-index sea alto para que el segmento esté encima del contenido */
+  background-color: #000; /* Ajusta el color de fondo según tu tema */
+  padding-top: 10px; /* Ajusta el padding según sea necesario */
+}
+
+
+ion-card {
+  --border-radius: 10px;
+  --img {
+    --border-radius: 10px;
+  }
+
+  ion-card-title {
+    text-align: center;
+    font-family: 'Antreas';
+    font-size: 28px;
+    font-weight: bold;
+  }
+}
+
+ion-card-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.datos {
+  display: flex;
+  flex-direction: column;
+}
+
+.carta-linda {
+  --background: url('../../../assets/images/cosas-lindas.png');
+  --background-size: cover;
+  --color: #000;
+  ion-card-title {
+    --color: #000;
+  }
+  p {
+    font-size: 21px;
+    font-weight: bold;
+  }
+}
+
+.carta-fea {
+  --background: url('../../../assets/images/cosas-feas.png');
+  --background-size: cover;
+  --color: #ff0000;
+  ion-card-title {
+    --color: #ff0000;
+  }
+  p {
+    font-size: 21px;
+    font-weight: bold;
+  }
+}
+
+.votar-boton {
+  background: none;
+  // border: solid 2px black;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;  // Tamaño del botón
+  height: 80px; // Tamaño del botón
+  border-radius: 50%;
+  padding: 2px;
+  margin-top: 0.5rem;
+}
+
+.votar-boton ion-icon {
+  font-size: 53px; // Tamaño del icono
+  color: red; // Color del icono
+}

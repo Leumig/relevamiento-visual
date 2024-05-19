@@ -1,10 +1,10 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace "com.tabla.parcial"
+    namespace "com.relevamiento.parcial"
     compileSdk rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "com.tabla.parcial"
+        applicationId "com.relevamiento.parcial"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

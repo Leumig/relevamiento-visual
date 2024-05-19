@@ -1,68 +1,62 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      INICIAR SESIÓN
-    </ion-title>
-  </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">INICIAR SESIÓN</ion-title>
-      <ion-progress-bar type="indeterminate"></ion-progress-bar>
-    </ion-toolbar>
-  </ion-header>
+  <ion-title>
+    INICIAR SESIÓN
+  </ion-title>
 
   <ion-list id="cuadro-login">
-    <ion-item *ngIf="errorInicioSesion" lines="none" color="danger" >
-      <ion-label>{{ mensajeError }}</ion-label>
-    </ion-item>
-    <div id="contenedor-boton">
-      <button (click)="ingresar(correoActual, claveActual)">Ingresar</button>
-    </div>
     <ion-item>
-      <ion-input color="primary"
-      type="email" fill="solid" label="Email" labelPlacement="floating"
+      <ion-input
+      type="email" fill="solid" label="CORREO" labelPlacement="floating"
       errorText="Correo no válido" ngModel email [(ngModel)]="correoActual" maxlength="40">
       </ion-input>
     </ion-item>
     <ion-item>
       <ion-input
-        fill="solid" label="Clave" labelPlacement="floating" type="password" value="" [(ngModel)]="claveActual" maxlength="30">
+        fill="solid" label="CLAVE" labelPlacement="floating" type="password" value="" [(ngModel)]="claveActual" maxlength="30">
       </ion-input>
     </ion-item> <br>
+    <div class="contenedorBoton">
+      <ion-button size="large" (click)="ingresar(correoActual, claveActual)">INGRESAR</ion-button>
+    </div>
+    <ion-item *ngIf="errorInicioSesion" lines="none" color="danger">
+      <ion-label>{{ mensajeError }}</ion-label>
+    </ion-item>
   </ion-list>
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button color="success">
-      <ion-icon name="ellipsis-vertical"></ion-icon>
-    </ion-fab-button>
+  <ion-list [inset]="true">
+    <ion-item-sliding>
+      <ion-item [button]="true" (click)="autocompletar('1')">
+        <ion-avatar aria-hidden="true" slot="start">
+          <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        </ion-avatar>
+        <ion-label style="font-family: 'monsterama'; font-size: 30px;">MIGUEL</ion-label>
+      </ion-item>
+    </ion-item-sliding>
 
-    <ion-fab-list side="top">
-      <ion-fab-button (click)="autocompletar('1')">
-        <ion-icon name="person"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-button (click)="autocompletar('2')">
-        <ion-icon name="person"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-button (click)="autocompletar('3')">
-        <ion-icon name="person"></ion-icon>
-      </ion-fab-button>
-    </ion-fab-list>
-  </ion-fab>
+    <ion-item-sliding>
+      <ion-item [button]="true" (click)="autocompletar('2')">
+        <ion-avatar aria-hidden="true" slot="start">
+          <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        </ion-avatar>
+        <ion-label style="font-family: 'monsterama'; font-size: 30px;">PEPE</ion-label>
+      </ion-item>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item [button]="true" (click)="autocompletar('3')">
+        <ion-avatar aria-hidden="true" slot="start">
+          <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        </ion-avatar>
+        <ion-label style="font-family: 'monsterama'; font-size: 30px;">LOLO</ion-label>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
 
   <div id="footer">
-    <h6>GIL MIGUEL ANGEL</h6>
-    <h6>PPS - CUARTO A</h6>
+    <p>GIL MIGUEL ÁNGEL  -  PPS - 4TO A</p>
   </div>
-
-  <div id="footer">
-    <h6>Tabla Didáctica</h6>
-    <p>Esta app colabora de forma sencilla en el aprendizaje
-      para niños de aprox. 5 años.
-    </p>
-  </div>
-
 
 </ion-content>

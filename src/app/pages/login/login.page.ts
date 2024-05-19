@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { minLengthValidator, emailValidator } from '../../validations/forms';
-import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +14,7 @@ export class LoginPage {
   errorInicioSesion: boolean = false;
   mensajeError: string = '';
 
-  constructor(private router: Router, private authService: AuthService, private toastController: ToastController) {}
+  constructor(private router: Router, private authService: AuthService) {}
 
   async ingresar(correoActual: string, claveActual: string) {
     console.log('Correo actual recibido: ' + correoActual);
@@ -51,7 +50,6 @@ export class LoginPage {
       this.mensajeError = '';
 
       this.router.navigate(['/inicio']);
-      this.mostrarToast();
     } catch (error) {
       console.log('Error durante el inicio de sesión:', error);
       this.mostrarError('Correo o clave incorrectos.');
@@ -61,15 +59,6 @@ export class LoginPage {
   mostrarError(mensaje: string) {
     this.errorInicioSesion = true;
     this.mensajeError = mensaje;
-  }
-
-  async mostrarToast() {
-    const toast = await this.toastController.create({
-      message: 'Bienvenidoooooo!',
-      duration: 3500,
-      cssClass: 'custom-toast'
-    });
-    toast.present();
   }
 
   autocompletar(usuario: string)

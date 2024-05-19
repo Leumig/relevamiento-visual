@@ -1,94 +1,51 @@
-<ion-header [translucent]="true">
-
-</ion-header>
-
 <ion-content [fullscreen]="true">
 
-  <div id="botones-container">
-    @if (this.tema === 'animales') {
-      <ion-button class="boton" (click)="generarSonido('leon')"><img src="../../../assets/images/animales/leon.png"></ion-button>
-      <ion-button class="boton" (click)="generarSonido('pez')"><img src="../../../assets/images/animales/pez.png"></ion-button>
-      <ion-button class="boton" (click)="generarSonido('elefante')"><img src="../../../assets/images/animales/elefante.png"></ion-button>
-      <ion-button class="boton" (click)="generarSonido('perro')"><img src="../../../assets/images/animales/perro.png"></ion-button>
-      <ion-button class="boton" (click)="generarSonido('tiburon')"><img src="../../../assets/images/animales/tiburon.png"></ion-button>
-    } @else if (this.tema === 'numeros') {
-      <ion-button class="boton" id="numeroUno" (click)="generarSonido('1')">1</ion-button>
-      <ion-button class="boton" id="numeroDos" (click)="generarSonido('2')">2</ion-button>
-      <ion-button class="boton" id="numeroTres" (click)="generarSonido('3')">3</ion-button>
-      <ion-button class="boton" id="numeroCuatro" (click)="generarSonido('4')">4</ion-button>
-      <ion-button class="boton" id="numeroCinco" (click)="generarSonido('5')">5</ion-button>
-    } @else {
-      <ion-button style="--background: #ff0000;" class="boton" (click)="generarSonido('rojo')"></ion-button>
-      <ion-button style="--background: #12a012;" class="boton" (click)="generarSonido('verde')"></ion-button>
-      <ion-button style="--background: #ffff00;" class="boton" (click)="generarSonido('amarillo')"></ion-button>
-      <ion-button style="--background: #2a2adb;" class="boton" (click)="generarSonido('azul')"></ion-button>
-      <ion-button style="--background: #750c75;" class="boton" (click)="generarSonido('violeta')"></ion-button>
-    }
+  <ion-item>
+    <div class="ion-page" id="main-content">
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+          <ion-title style="font-family: 'Antreas'; font-size: 32px;">RELEVAMIENTO VISUAL</ion-title>
+        </ion-toolbar>
+      </ion-header>
+    </div>
+  </ion-item>
+
+  <div class="contenedorBotones">
+    <ion-button id="botonLindas" size="large" (click)="tomarFoto('lindas')">
+      <ion-icon name="sparkles-outline"></ion-icon>
+      <ion-label style="font-family: 'Antreas';">COSAS LINDAS</ion-label>
+      <ion-icon name="sparkles-outline"></ion-icon>
+    </ion-button>
+
+    <ion-button id="botonFeas" size="large" (click)="tomarFoto('feas')">
+      <ion-icon name="skull-outline"></ion-icon>
+      <ion-label style="font-family: 'Antreas';">COSAS FEAS</ion-label>
+      <ion-icon name="skull-outline"></ion-icon>
+    </ion-button>
   </div>
 
-  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
-    <ion-fab-button color="success">
 
-      @if (idioma === 'español') {
-        <img src="../../../assets/images/iconos/españa.png">
-      } @else if (idioma === 'ingles') {
-        <img src="../../../assets/images/iconos/eeuu.png">
-      } @else {
-        <img src="../../../assets/images/iconos/portugal.png">
-      }
+  <!-- Toast -->
+  <!-- isOpen va a ser el estado, hay que pasarle una variable bool de nuestro TS -->
+  <!-- [message] va a ser el texto del Toast. Le paso la variable de mi TS, aunque podría hardcodearlo aca -->
+  <!-- class va a ser una clase CSS que le puedo poner para cambiarle los estilos -->
+  <!-- didDismiss sirve para ponerla en estado de false al iniciar. Es importante que empiece en falso -->
+  <ion-toast [isOpen]="isToastOpen"
+    [message]="mensajeToast"
+    [duration]="3500"
+    class="custom-toast"
+    (didDismiss)="isToastOpen = false"
+    icon="checkmark-circle-outline"
+  ></ion-toast>
 
-    </ion-fab-button>
-    <ion-fab-list side="top">
-      <ion-fab-button (click)="cambiarIdioma('portugues')" class="custom-fab-button">
-        <img src="../../../assets/images/iconos/portugal.png">
-      </ion-fab-button>
-      <ion-fab-button (click)="cambiarIdioma('ingles')" class="custom-fab-button">
-        <img src="../../../assets/images/iconos/eeuu.png">
-      </ion-fab-button>
-      <ion-fab-button (click)="cambiarIdioma('español')" class="custom-fab-button">
-        <img src="../../../assets/images/iconos/españa.png">
-      </ion-fab-button>
-    </ion-fab-list>
-  </ion-fab>
-
-  <ion-fab slot="fixed" vertical="bottom" horizontal="start">
-    <ion-fab-button class="custom-fab-button" color="success" >
-
-      @if (tema === 'animales') {
-        <!-- <ion-icon size="large" name="paw-outline"></ion-icon> -->
-        <img src="../../../assets/images/iconos/animales.png">
-      } @else if (tema === 'colores') {
-        <!-- <ion-icon size="large" name="color-palette-outline"></ion-icon> -->
-        <img src="../../../assets/images/iconos/colores.png">
-      } @else {
-        <!-- <ion-icon size="large" name="school-outline"></ion-icon> -->
-        <img src="../../../assets/images/iconos/numeros.png">
-      }
-
-    </ion-fab-button>
-    <ion-fab-list side="top">
-      <ion-fab-button (click)="cambiarTema('colores')" color="success" class="custom-fab-button">
-        <!-- <ion-icon size="large" name="color-palette-outline"></ion-icon> -->
-        <img src="../../../assets/images/iconos/colores.png">
-
-      </ion-fab-button>
-      <ion-fab-button (click)="cambiarTema('numeros')" color="success" class="custom-fab-button">
-        <!-- <ion-icon size="large" name="school-outline"></ion-icon> -->
-        <img src="../../../assets/images/iconos/numeros.png">
-
-      </ion-fab-button>
-      <ion-fab-button (click)="cambiarTema('animales')" color="success" class="custom-fab-button">
-        <!-- <ion-icon size="large" name="paw-outline"></ion-icon> -->
-        <img src="../../../assets/images/iconos/animales.png">
-
-      </ion-fab-button>
-    </ion-fab-list>
-  </ion-fab>
-  
-  <ion-fab slot="fixed" vertical="top" horizontal="start">
-    <ion-fab-button color="white" (click)="cerrarSesion()">
-      <ion-icon name="log-out-outline"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-
+  <!-- Este es el Toast que da la bienvenida -->
+  <ion-toast [isOpen]="toastBienvenida"
+  message="¡Bienvenido a Relevamiento Visual!"
+  [duration]="3500"
+  class="custom-toast-bienvenida"
+  (didDismiss)="toastBienvenida = false"
+></ion-toast>
 </ion-content>

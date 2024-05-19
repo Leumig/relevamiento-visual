@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'monsterama';
+  src: url('../../assets/fonts/monsterama.ttf') format('truetype');
+
+  font-family: 'Antreas';
+  src: url('../../assets/fonts/Antreas.ttf') format('truetype');
+
+  font-family: 'youngfrank';
+  src: url('../../assets/fonts/youngfrank.ttf') format('truetype');
+}
+
+ion-title {
+  color: #ff0000;
+  --font-family: 'youngfrank';
+}
+ion-menu-button {
+  color: #ff0000;
+}

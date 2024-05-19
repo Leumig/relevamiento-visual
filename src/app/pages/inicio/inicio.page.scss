@@ -1,91 +1,98 @@
 @font-face {
-  font-family: 'RifficFree-Bold';
-  src: url('../../../assets/fonts/RifficFree-Bold.ttf') format('truetype');
+  font-family: 'monsterama';
+  src: url('../../../assets/fonts/monsterama.ttf') format('truetype');
+
+  font-family: 'Antreas';
+  src: url('../../../assets/fonts/Antreas.ttf') format('truetype');
 }
 
-ion-content {
-  --background: #024b40;
+ion-title {
+  color: #ff0000;
+  --font-family: 'Antreas';
+}
+ion-menu-button {
+  color: #ff0000;
 }
 
-#botones-container {
+.contenedorBotones {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1px;
-  align-items: stretch; /* Estira los elementos para que cubran toda la altura */
-  height: 98vh; /* Altura del 90% de la ventana */
-}
-
-.boton {
-  flex-basis: calc(100% - 1px); /* Ancho del botón (40% del contenedor - 10px de espacio entre botones) */
-  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 18vh;
-  // font-size: 145px;
-  color: #fff;
-  font-family: 'RifficFree-Bold';
 }
 
 ion-button {
-  --background: #006859;
+  --border-radius: 0;
+  --border-color: #000;
+  --border-style: solid;
+  --border-width: 1px;
+  --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+
+  width: 100%;
+  height: 45vh;
+  font-size: 40px;
+  font-weight: bold;
 }
 
-.boton img {
-  max-width: 100%; /* Asegura que la imagen se ajuste al tamaño del botón */
-  max-height: 100%;
+#botonLindas {
+  --background: url('../../../assets/images/cosas-lindas.png');
+  // --background: #54bb52;
+  --background-hover: #54bb52;
+  --background-activated: #54bb52;
+  --background-focused: #54bb52;
+  --color: rgb(0, 0, 0);
+  --border-radius: 0;
 }
 
-.custom-fab-button {
-  width: 60px; /* Ajusta el ancho según tus preferencias */
-  height: 60px; /* Ajusta la altura según tus preferencias */
-  
-  img {
-    width: 70%; /* Ajusta el ancho según tus preferencias */
-    height: 70%; /* Ajusta la altura según tus preferencias */
-  }
+#botonFeas {
+  --background: url('../../../assets/images/cosas-feas.png');
+  --background-size: cover;
+  // --background: #a33b3b;
+  --background-hover: #a33b3b;
+  --background-activated: #a33b3b;
+  --background-focused: #a33b3b;
+  --color: rgb(248, 45, 45);
+  --border-radius: 0;
 }
 
-
-#numeroUno {
-  color:#fee500;
-  font-size: 145px;
-}
-#numeroDos {
-  color:#ff0000;
-  font-size: 145px;
-}
-#numeroTres {
-  color:#13c4b2;
-  font-size: 145px;
-}
-#numeroCuatro {
-  color:#ff0bf3;
-  font-size: 145px;
-}
-#numeroCinco {
-  color:#00ff44;
-  font-size: 145px;
+.button-container {
+  display: flex;
+  flex-direction: column;
+  height: 95%;
+  width: 95%;
 }
 
-@media screen and (orientation: landscape) {
-  #numeroUno {
-    color:#fee500;
-    font-size: 78px;
-  }
-  #numeroDos {
-    color:#ff0000;
-    font-size: 78px;
-  }
-  #numeroTres {
-    color:#13c4b2;
-    font-size: 78px;
-  }
-  #numeroCuatro {
-    color:#ff0bf3;
-    font-size: 78px;
-  }
-  #numeroCinco {
-    color:#00ff44;
-    font-size: 78px;
-  }
+.contenedor-imagen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// Toast que informa cómo funcionó sacar la foto
+.custom-toast {
+  --background: #65b548;
+  --box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
+  --border-radius: 5px;
+  --color: #fff;
+  font-size: 23px;
+  font-family: 'Antreas';
+}
+.custom-toast::part(message) {
+  font-size: 36px;
+}
+
+// Toast que da la bienvenida
+.custom-toast-bienvenida {
+  --background: #000000;
+  --box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
+  --border-radius: 5px;
+  --color: #de1d1d;
+  font-family: 'Antreas';
+}
+.custom-toast-bienvenida::part(message) {
+  font-size: 32px;
+  text-align: center;
 }

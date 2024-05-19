@@ -1,0 +1,33 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title style="font-family: 'youngfrank'; font-size: 32px;">RELEVAMIENTO VISUAL</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-list>
+          <ion-item style="font-family: 'youngfrank';" (click)="verInicio()">
+            <ion-icon slot="start" name="home-outline"></ion-icon>
+            <ion-label style="font-family: 'youngfrank'; font-size: 32px; color: #ff0000">INICIO</ion-label>
+          </ion-item>
+          <ion-item style="font-family: 'youngfrank';" (click)="verFotos()">
+            <ion-icon slot="start" name="images-outline"></ion-icon>
+            <ion-label style="font-family: 'youngfrank'; font-size: 32px; color: #ff0000">FOTOS</ion-label>
+          </ion-item>
+          <ion-item style="font-family: 'youngfrank';" (click)="verGraficos()">
+            <ion-icon slot="start" name="stats-chart-outline"></ion-icon>
+            <ion-label style="font-family: 'youngfrank'; font-size: 32px; color: #ff0000">GRÁFICOS</ion-label>
+          </ion-item>
+          <ion-item style="font-family: 'youngfrank';" (click)="cerrarSesion()">
+            <ion-icon slot="start" name="log-out-outline"></ion-icon>
+            <ion-label style="font-family: 'youngfrank'; font-size: 32px; color: #ff0000">SALIR</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

@@ -11,4 +11,8 @@ export class AuthService {
   login(correo: string, clave: string) {
     return signInWithEmailAndPassword(this.authFirebase, correo, clave);
   }
+
+  getCurrentUserEmail(): string | null | undefined {
+    return this.authFirebase.currentUser?.email;
+  }
 }

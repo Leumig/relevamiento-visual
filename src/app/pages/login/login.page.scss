@@ -1,21 +1,21 @@
 @font-face {
-  font-family: 'script-1';
-  src: url('../../../assets/fonts/script-1.ttf') format('truetype');
+  font-family: 'monsterama';
+  src: url('../../../assets/fonts/monsterama.ttf') format('truetype');
 }
 
 ion-content {
-  --background: #006859;
+  --background: url('../../../assets/splash1-convertido.jpg'); // Color de fondo del contenido
 }
 
 ion-toolbar {
-  --background: #024b40; // Color de fondo de la barra de herramientas
+  --background: #ee0000; // Color de fondo de la barra de herramientas
   color: #fff; // Color del texto en la barra de herramientas
 }
 
 ion-title {
-  font-size: 30px; // Tamaño del título
-  font-family: 'script-1';
   text-align: center;
+  font-size: 42px; // Tamaño del título
+  font-family: 'monsterama';
 }
 
 ion-item {
@@ -24,69 +24,56 @@ ion-item {
 }
 
 ion-input {
-  font-family: 'script-1';
+  font-family: 'monsterama';
   font-size: 30px; // Tamaño de fuente del input
 }
 
-#contenedor-boton {
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 25px;
-}
-
-button {
-  font-family: 'script-1';
-  background: #2DD55B; // Color de fondo del botón
-  color: #000000; // Color del texto del botón
+ion-button {
+  font-family: 'monsterama';
+  --background: #bd0606; // Color de fondo del botón
+  --color: #fff; // Color del texto del botón
   font-size: 30px; // Tamaño de fuente del botón
   margin-top: 20px; // Espacio superior del botón
-  margin-left: 20px;
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); // Sombra del borde (horizontal, vertical, blur, color)
+  border: solid 4px rgb(128, 0, 0);
+  border-radius: 5px;
 }
 
+.contenedorBoton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ion-avatar {
+  color: red;
+  width: 62px; // Ancho del avatar
+  height: 62px; // Alto del avatar
+}
 
 ion-list {
-  background: #006859;
+  background: rgb(0, 0, 0);
+  border: 5px solid black;
+  border-radius: 10px;
 }
 
 ion-label {
-  font-family: 'script-1';
+  font-family: 'monsterama';
   font-size: 80px;
 }
 
 #cuadro-login {
-  background-color: #006859;
+  background-color: #000000;
 }
 
 #footer {
-  margin-top: 20px;
-  background-color: #024b40;
-  color: #fff;
   margin-left: 10px;
-  padding: 5px;
+  padding: 0px;
   width: 95%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  border: solid 8px rgb(206, 3, 3);
   border-radius: 10px;
-  font-family: 'script-1';
-  font-size: 30px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); // Sombra del borde (horizontal, vertical, blur, color)
-
-  h6 {
-    font-weight: bold;
-    font-size: 30px;
-    margin-bottom: 15px;
-  }
-}
-
-@media screen and (orientation: landscape) {
-  #footer {
-    display: none;
-  }
+  font-family: 'monsterama';
+  font-size: 30px; // Tamaño de fuente de la etiqueta
 }
