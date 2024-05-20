@@ -14,7 +14,7 @@ export class AppComponent {
   }
   
   initializeApp() {
-    this.router.navigateByUrl('login');
+    this.router.navigateByUrl('splash');
   }
 
   ionViewDitEnter() {

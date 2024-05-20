@@ -15,16 +15,23 @@ export class BdFotosService {
   async guardarFoto(foto: Foto) {
     try {
       const fotosCollection = collection(this.firestore, this.PATH);
-      const docRef = await addDoc(fotosCollection, {
-        ...foto
-      });
-      foto.id = docRef.id; // Asigno el ID generado por Firestore
+      const fotoData = {
+        url: foto.url,
+        nombre: foto.nombre,
+        tipo: foto.tipo,
+        fecha: foto.fecha,
+        usuario: foto.usuario,
+        votos: foto.votos,
+        votantes: foto.votantes
+      };
+
+      const docRef = await addDoc(fotosCollection, fotoData);
+      foto.id = docRef.id;
       console.log('Foto guardada en Firestore con ID:', foto.id);
     } catch (error) {
       console.error('Error al guardar la foto en Firestore:', error);
     }
   }
-
 
   // Función para obtener fotos de Firestore según su tipo y ordenadas por fecha
   async obtenerFotos(tipo?: string): Promise<Foto[]> {

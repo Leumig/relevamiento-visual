@@ -39,14 +39,6 @@ export class FotosPage implements OnInit {
     this.cargarFotos(this.filtro);
   }
 
-  /*
-  async votar(foto: Foto) {
-    if (this.usuarioActual) {
-      await this.bdFotosService.votarFoto(foto.id!, this.usuarioActual);
-      await this.cargarFotos();
-    }
-  }
-  */
 
   async votar(foto: Foto) {
     if (this.usuarioActual) {

@@ -11,4 +11,46 @@
       </ion-header>
     </div>
   </ion-item>
+
+  <div class="sticky-segment">
+    <ion-segment (ionChange)="onFiltroChange($event)" value="lindas">
+      <ion-segment-button value="lindas">
+        <ion-label>Lindas</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="feas">
+        <ion-label>Feas</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div *ngIf="filtro === 'lindas'">
+    <br><br><br>
+    <canvas id="pieChartLindas"></canvas>
+    @if (fotoSeleccionada !== null && fotoSeleccionada !== undefined) {
+      <br>
+      <ion-card>
+        <img [src]="fotoSeleccionada!.url" />
+        <ion-card-content>
+          <ion-card-title>{{ fotoSeleccionada!.nombre }}</ion-card-title>
+        </ion-card-content>
+      </ion-card>
+    }
+  </div>
+  <div *ngIf="filtro === 'feas'">
+    <br><br><br>
+    <canvas id="barChartFeas"></canvas>
+    <br>
+    @if (fotoSeleccionada !== null && fotoSeleccionada !== undefined) {
+      <ion-card>
+        <img [src]="fotoSeleccionada!.url" />
+        <ion-card-content>
+          <ion-card-title>{{ fotoSeleccionada!.nombre }}</ion-card-title>
+        </ion-card-content>
+      </ion-card>
+    }
+  </div>
+
+  <div>
+    <img src="">
+  </div>
 </ion-content>
