@@ -38,14 +38,14 @@
     [duration]="3500"
     class="custom-toast"
     (didDismiss)="isToastOpen = false"
-    icon="checkmark-circle-outline"
-  ></ion-toast>
+    icon="checkmark-circle-outline">
+  </ion-toast>
 
   <!-- Este es el Toast que da la bienvenida -->
   <ion-toast [isOpen]="toastBienvenida"
-  message="¡Bienvenido a Relevamiento Visual!"
-  [duration]="3500"
-  class="custom-toast-bienvenida"
-  (didDismiss)="toastBienvenida = false"
-></ion-toast>
+    message="¡Bienvenido a Relevamiento Visual!"
+    [duration]="3500"
+    class="custom-toast-bienvenida"
+    (didDismiss)="toastBienvenida = false">
+  </ion-toast>
 </ion-content>
